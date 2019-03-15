@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container">
+        <h1>ToDo List</h1>
+        <div>
+            <input type="text" id="task">
+            <button onclick="createList()">Create</button>
+        </div>
+        <ul id="list"></ul>
+    </div>
+    <script>
+        function createList(){
+    var  i = 0;
+    var task = document.getElementById("task").value;
+    if(task === ""){
+        alert("Enter some todo task");
+        return 0;
+    }
+    var x = document.createElement("li");
+    x.setAttribute('id', i);
+    var t = document.createTextNode(task);
+    x.appendChild(t);
+    document.getElementById("list").appendChild(x);
+    document.getElementById("task").value = "";
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table, td {
+border: 1px solid #2C3E50;
+}
+#head{
+background-color:#2C3E50;
+padding:12px;
+border-radius:15px;
+color:#fff;
+text-align: center;
+}
+body{
+background-color: #2C3E50;
+}
+tr{
+height:40px;
+}
+td{
+width: 100px;
+text-align:center;
+border-radius:10px;
+background-color: #2C3E50;
+color:#CCD1D1;
+}
+#result{
+border:none;
+font-size:20px;
+font-weight:800;
+}
+#myTable{
+display:none;
+width:100%;
+}
+#page{
+width:424px;
+margin:40px auto;
+background-color:#CCD1D1  ;
+padding:10px 70px;
+border-radius: 30px;
+}
+input{
+width:400px;
+height: 30px;
+border-radius:12px;
+padding:5px;
+outline:none;
+}
+button{
+padding:10px;
+color: #CCD1D1;
+width:93px;
+background-color:#2C3E50;
+border-radius: 10px;
+}
+h4{
+    font-size: 25px;
+    color:#2C3E50;
+}
+h2{
+    font-size: 25px;
+    color:#2C3E50;
+}
+</style>
+</head>
+<body>
+<div id="page">
+<h1 id="head">Salary Form</h1>
+<form action="" >
+<h4> First name:</h4>
+<input type="text" name="firstname" id="first" required>
+<h4>Last name:</h4>
+<input type="text" name="lastname" id="last" required>
+<h4>Salary:</h4>
+<input type="number" name="salary" id="salary" required>
+<br><br>
+<button type="reset" value="Reset">Reset</button><br><br>
+</form>
+<span style="display: flex;">
+<button onclick="myFunction()">Submit</button><br><br>
+</span>
+<table id="myTable">
+<h2 id="emp" style="display:none;">Employee Details Form</h2>
+<tr>
+<td>First Name</td>
+<td>Last Name</td>
+<td>Salary</td>
+</tr>
+</table>
+<h2>Numbers</h2>
+<table id="result">
+<tr>
+<td>Total</td>
+<td id="sum">0</td>
+</tr>
+<tr>
+<td>Average</td>
+<td id="avg">0</td>
+</tr>
+</table>
+<br>
+</div>
+<script>
+var total= 0;
+function myFunction() {
+document.getElementById("myTable").style.display = "block";
+document.getElementById("emp").style.display = "block";
+document.getElementById("myTable").style.border = "none";
+var table = document.getElementById("myTable");
+var row = table.insertRow(1);
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(1);
+cell1.innerHTML = document.getElementById('first').value;
+cell3.innerHTML = document.getElementById('last').value;
+cell2.innerHTML = document.getElementById('salary').value;
+salary = document.getElementById("salary").value
+salary = parseInt(salary);
+total = parseInt(total);
+total = total + salary;
+document.getElementById("sum").innerHTML = total;
+var row = document.getElementById("myTable").rows.length;
+document.getElementById("avg").innerHTML = total/(row-1);
+}
+</script>
+</body>
+</html>s
